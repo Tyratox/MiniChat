@@ -65,6 +65,8 @@ public class MiniChat extends JFrame implements KeyListener{
 			public void run() {
 				try {
 					try{
+						System.setProperty("java.net.preferIPv4Stack", "true");
+						
 						System.out.println("Starting Getting Multicast Socket....");
 						group = InetAddress.getByName(JOptionPane.showInputDialog("Enter the multicast address"));
 						getSocket = new MulticastSocket(port_udp);
